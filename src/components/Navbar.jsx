@@ -2,7 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../assets/Logo.svg';
 
-const Navbar = ()=>{
+const Navbar = (props)=>{
+
+    let isLoggedIn = props.isLoggedIn;
+    let setLoggedIn = props.setLoggedIn;
+
     return(
         <div className='flex'>
 
@@ -25,28 +29,28 @@ const Navbar = ()=>{
             </nav>
 
             <div className='flex ml-5 gap-3'>
-                {
+                { !isLoggedIn &&
                     <Link to="/login">
                         <button>
                             Login
                         </button>
                     </Link>
                 }
-                {
+                { !isLoggedIn &&
                     <Link to="/signup">
                         <button>
                             Signup
                         </button>
                     </Link>
                 }
-                {
+                { isLoggedIn &&
                     <Link to="/">
                         <button>
                             Logout
                         </button>
                     </Link>
                 }
-                {
+                { isLoggedIn &&
                     <Link to="/Dashboard">
                         <button>
                             Dashboard
