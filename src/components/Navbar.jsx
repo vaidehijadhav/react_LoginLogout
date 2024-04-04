@@ -1,14 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import logo from '../assets/Logo.svg';
+import { toast } from 'react-hot-toast';
 
 const Navbar = (props)=>{
 
     let isLoggedIn = props.isLoggedIn;
-    let setLoggedIn = props.setLoggedIn;
+    let setIsLoggedIn = props.setIsLoggedIn;
 
     return(
-        <div className='flex'>
+        <div className='flex justify-evenly'>
 
             <Link to="/">
                 <img src={logo} alt='Logo' width={160} height={32} loading='lazy' />
@@ -31,21 +32,24 @@ const Navbar = (props)=>{
             <div className='flex ml-5 gap-3'>
                 { !isLoggedIn &&
                     <Link to="/login">
-                        <button>
+                        <button >
                             Login
                         </button>
                     </Link>
                 }
                 { !isLoggedIn &&
                     <Link to="/signup">
-                        <button>
+                        <button >
                             Signup
                         </button>
                     </Link>
                 }
                 { isLoggedIn &&
                     <Link to="/">
-                        <button>
+                        <button onClick={ ()=> {
+                            setIsLoggedIn(false);
+                            toast.success("Logout Successfully!!");
+                        }}>
                             Logout
                         </button>
                     </Link>
