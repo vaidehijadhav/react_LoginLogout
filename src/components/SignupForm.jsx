@@ -48,14 +48,14 @@ const SignupForm = ({setIsLoggedIn})=>{
         console.log("Printing final account data");
         console.log(finalData);
 
-        navigate("/dashboard");
+        navigate("/Dashboard");
     }
 
     return(
         <div>
             
             {/* student-instructor tab */}
-            <div className="flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max h-full">
+            <div className="flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max max-h-max">
                 <button 
                     className={`${accountType === "student" 
                     ? "bg-richblack-900 text-richblack-5"
@@ -64,7 +64,7 @@ const SignupForm = ({setIsLoggedIn})=>{
                     Student
                 </button>
                 <button 
-                    className={`${accountType === "student" 
+                    className={`${accountType === "instructor" 
                     ? "bg-richblack-900 text-richblack-5"
                     :"bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
                     onClick={()=> setAccountType("instructor")}>

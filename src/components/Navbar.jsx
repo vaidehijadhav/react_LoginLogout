@@ -51,14 +51,14 @@ const Navbar = (props)=>{
                         <button onClick={ ()=> {
                             setIsLoggedIn(false);
                             toast.success("Logout Successfully!!");
-                        }} className='bg-richblack-800 text-richblack-100 py-[8px] px-[12px]
-                        rounded-[8px] border border-richblack-700'>
+                        }} 
+                        className='bg-richblack-800 text-richblack-100 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>
                             Logout
                         </button>
                     </Link>
                 }
                 { isLoggedIn &&
-                    <Link to="/Dashboard">
+                    <Link to="/dashboard">
                         <button className='bg-richblack-800 text-richblack-100 py-[8px] px-[12px]
                         rounded-[8px] border border-richblack-700'>
                             Dashboard
