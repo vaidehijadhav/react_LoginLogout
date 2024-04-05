@@ -8,7 +8,7 @@ const Template = ({title, desc1, desc2, image, formtype, setIsLoggedIn}) => {
     return (
         <div className='flex w-11/12 max-w-[1160px] justify-between py-12 mx-auto gap-x-12 gap-y-0'>
 
-            <div>
+            <div className='w-11/12 max-w-[450px]'>
                 <h1 className='text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem] '>
                     {title}
                 </h1>
