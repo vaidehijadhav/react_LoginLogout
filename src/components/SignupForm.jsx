@@ -17,6 +17,7 @@ const SignupForm = ({setIsLoggedIn})=>{
     })
 
     const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [accountType, setAccountType] = useState("student");
 
     function changeHandler(event){
@@ -49,7 +50,7 @@ const SignupForm = ({setIsLoggedIn})=>{
         <div>
             
             {/* student-instructor tab */}
-            <div className="flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max">
+            <div className="flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max h-full">
                 <button 
                     className={`${accountType === "student" 
                     ? "bg-richblack-900 text-richblack-5"
@@ -144,7 +145,7 @@ const SignupForm = ({setIsLoggedIn})=>{
                             Confirm Password<sup className='text-pink-200'>*</sup>
                         </p>
                         <input 
-                        required type= {showPassword ? ("text") : ("password")}
+                        required type= {showConfirmPassword ? ("text") : ("password")}
                         name="confirmPassword"
                         onChange={changeHandler}
                         placeholder="Renter Password"
@@ -153,8 +154,8 @@ const SignupForm = ({setIsLoggedIn})=>{
                         />
 
                     <span className='absolute right-3 top-[38px] cursor-pointer' 
-                        onClick={()=> setShowPassword((prev)=> !prev )}>
-                        {showPassword ? 
+                        onClick={()=> setShowConfirmPassword((prev)=> !prev )}>
+                        {showConfirmPassword ? 
                         (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>):
                         (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>) }
                     </span>
